@@ -1,0 +1,18 @@
+$vgrid: 1em;
+
+
+/* Fontawesome Icons */
+@mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
+    font-family: 'FontAwesome';
+    content: $cnt;
+    padding-right: $pd-ri;
+    opacity: $op;
+    margin-left:$mg-le;
+    font-size:$size;
+}
+/** shadow ***/
+@mixin shadow {
+    -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+}

@@ -1,0 +1,86 @@
+$susy: (
+columns: 12,  // The number of columns in your grid
+gutters: 1/4, // The size of a gutter in relation to a single column
+);
+#wrapper {
+    @include container;
+    > #container .inside{
+        @include container;
+        .netpoint-billboard, .social, .mod_breadcrumb{
+            width:inherit; 
+        }
+        #side-nav{
+            @include span(3 of 12);
+            ~ .mod_article {@include span(last 9 of 12);}
+        }
+    }
+    > footer, > header{
+        @include container;
+    }
+}
+#header{
+    .inside {
+        @include container;
+        hgroup{
+            @include span(3 of 12);
+        }
+        #main-nav {
+            @include span(last 9 of 12);
+            .level_1{
+                @include display-flex;
+                @include flex-direction(row);
+                @include justify-content(space-between);
+                @include align-items(baseline);
+
+                li {
+                    @include flex(1 0);
+                    font-size:1em;
+                    font-size:1.2vw;
+                }
+            }
+        }
+    }
+}
+.social,.mod_breadcrumb ul {
+    @include container;
+    > * {@include span(1 od 12);}
+}
+.flex-container {
+    @include container;
+    body.startseite &{
+        width:100%;
+        @include columns(20em 2);
+    }
+}
+.block{
+    body.startseite .flex-container &{
+        @include break-inside(avoid);
+        background:white;
+        margin:1em 0;
+        border:1px solid #ccc;
+    }
+/*    body.startseite .flex-container &:nth-child(even){
+        margin-right: 0;
+    }
+    body.startseite .flex-container &:nth-child(odd){
+        margin-left: 0;
+    }
+    body:not(.startseite) .flex-container & {
+        flex:1;
+    }*/
+}
+#footer {
+    .footer-inside{
+        @include display-flex;
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+        > div{
+            @include flex(1 0);
+            img {
+                margin-right:$vgrid;
+            }
+        }
+
+    }
+
+}

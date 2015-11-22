@@ -1,0 +1,18 @@
+/* Mediaqueries breakpoints */
+/* Fontawesome Icons */
+/** shadow ***/
+/* Border Radius */
+/* Flexboxes */
+.if-has-side-nav {
+  margin-left: 210px;
+  /*ca. nav width ins javascript oder sass calc*/
+  padding: 0 1em;
+  border-left: 1px dashed #cccccc;
+}
+
+#wrapper {
+  max-width: 100%;
+  width: 100%;
+  min-width: 960px;
+  background: #f4f4f4;
+}

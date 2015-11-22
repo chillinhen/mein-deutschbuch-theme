@@ -1,0 +1,20 @@
+  .btn-download{
+    @include span(last 2 of 12);
+    @include shadow;
+    padding:$vgrid;
+    background:$highlightcolor;
+    * {
+        color:lighten($highlightcolor,80%);
+        text-decoration: none;
+    }
+    img {
+        display: none;
+    }
+    &:after {
+        @include icon-style ("\f1c1", 0, 1, 1em, large);
+    }
+    &:hover{
+        text-decoration: none;
+        background-image: none;
+    }
+}

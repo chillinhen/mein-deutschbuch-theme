@@ -1,0 +1,29 @@
+
+
+.leader-board-wallpaper{
+    float:right;
+    margin-right: 160px;
+}
+.if-has-ads{
+    &#wrapper{
+        padding-right:160px;
+        float:left;
+    }
+    &.netpoint-billboard {
+        margin: 2em 3em;
+        border-bottom: 1px solid #ccc;
+    }
+    .netpoint-billboard{
+        padding-bottom: 2em;
+        margin-bottom:2em;
+    }
+
+    .flex-container {
+        .ce_text{
+            @include span(8 of 12);
+        } 
+        .adsense{
+            @include span(3 of 12); 
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<div class="interactive">
+	{{insert_article::partnerseiten}}
+    {{insert_module::39}}
+    {{insert_module::40}}
+    <div class="search-boxen">
+	    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#searchForms" aria-expanded="false" aria-controls="searchForms">
+	      Toggle Search
+	    </button>
+	    <div class="collapse" id="searchForms">
+	      {{insert_module::45}}
+	      {{insert_module::42}}
+	    </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+
+
+.mod_navigation{
+        > ul > li {
+            &.sibling{
+                text-transform:uppercase;
+                &:first-child{
+                    border-top: 0;
+                }
+                &:last-child{
+                    border-bottom:0;
+                }
+
+            }
+             a{
+                
+            }
+        }
+        .level_1{
+            li {
+                a {
+                    background:$basecolor;
+                }
+                ul.level_2 {
+                    li {
+                        a {background:lighten($basecolor,20%)};
+                        
+                        ul.level_3 {
+                            li {
+                                a {background:lighten($basecolor,40%)};
+                            }
+                        }
+                    }
+                }
+            }
+        .level_2{
+            padding:1em 0;
+            > li {
+                flex-grow:1;
+                text-transform: none;
+                line-height: 1.4;
+                border-bottom: 1px solid $basecolor;
+            }
+            > ul {
+                padding-left:.5em;
+            }
+        }
+        .ce_accordion &{
+             li.sibling{
+                   text-transform: normal !important; 
+                }
+            li {
+                padding-left:1em;
+                border:0;
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+/*** Bootstrap Nav Tweaks ***/
+.navbar-fixed-top{
+    z-index: 999999;
+}
+/** Inhaltsverzeichnis **/
+.ce_table-of-contents, ul.level_1{
+    li.active > a{
+        background:$highlightcolor;
+        color:white !important;
+    }
+}
+
+.affix{
+        background: #fff;
+        border:1px solid $baseBorderColor;
+        top:0;
+        left:0;
+        z-index:999;
+        *{
+            font-size: small;
+        }
+        > *{
+            padding:1em;
+        }
+        &.flex-container{
+            flex-flow: column wrap;
+            margin:0;
+            max-width: 320px;
+        }
+    }
+    
+/** Individual Styles ***/
+#main-nav{
+            > ul{
+                @include flexbox();
+                flex-flow:row wrap;
+                > li {
+                    flex: 1;
+                }
+            }
+        }
+a{
+  
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.10.2015, 16:51:16
+    Author     : chilliscope
+*/
+

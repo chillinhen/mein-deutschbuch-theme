@@ -1,0 +1,47 @@
+/*#wrapper{
+    max-width:100%;
+   
+    min-width:1170px;
+     width:100%;
+     margin: 0 auto;
+     min-height: 100.1%;
+    }
+    
+    .inside{
+
+    }
+#header {
+    height: auto;
+    hgroup{
+        margin:0 1em;
+    }
+}
+#container {
+
+    #main, #left, #right {
+        float: left;
+        position: relative;
+    }
+    #left, #right {
+        min-height: 100.1%;
+    }
+    #main {
+        width: 100%;
+        .inside{
+            padding:1em;
+        }
+    }
+    #left {
+        margin-left: -100%;
+    }
+    #right {
+        margin-right: -100%;
+margin-right: -160px;
+    }
+}
+#footer {
+    height: auto;
+    margin-top: 25px;
+    padding: 45px;
+    clear:both;
+}*/
