@@ -5,31 +5,23 @@ jQuery(function ($) {
         // adblocker detected, show fallback
         //alert('ads');
         //$('.leader-board-wallpaper, #main-nav, #main .mod_article').addClass('move-leaderboard');
-        $('#wrapper, .netpoint-billboard, #main, #footer').addClass('if-has-ads');
+        $('.custom, #wrapper, .netpoint-billboard, #main, #footer').addClass('if-has-ads');
       }
     
-    
-    /*** Bootstrap Tweaks ***/
-    /** Navigation*/
-    $('aside .mod_navigation nav > ul').addClass('nav-stacked');
-    $('.mod_breadcrumb').children('ul').addClass('breadcrumb');
-    //$("a[href$='http://vg01.met.vgwort.de/']").css("background-color", "yellow");
-    $("a[href$='pdf']")
-            .addClass('btn-danger')
-            .addClass('btn-download');
-    
-    
-    
-    
-    //$('#main-nav a, #main-nav span').addClass('btn').addClass('btn-secondary');
     
     //add target _blanl to external links
     $('a').filter(function () {
         return this.hostname && this.hostname !== location.hostname;
     }).attr("target", "_blank");
     
-    
-    /** END Bootstrap styles*/
+    // Toggle contents
+    $();
+    $('.ce_headline.toggle').each(function () {
+        $(this).next('.flex-container').addClass('hidden');
+        $(this).click(function () {
+            $(this).next().toggleClass('hidden');
+        });
+    });
 });
 /** Table of contents***/
 jQuery(function ($) {

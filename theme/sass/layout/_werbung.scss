@@ -1,10 +1,8 @@
-
-
-.leader-board-wallpaper{
-    float:right;
-    margin-right: 160px;
-}
 .if-has-ads{
+    &.custom{
+        float:right;
+    margin-right: 160px;
+    }
     &#wrapper{
         padding-right:160px;
         float:left;
@@ -19,11 +17,23 @@
     }
 
     .flex-container {
-        .ce_text{
-            @include span(8 of 12);
-        } 
-        .adsense{
-            @include span(3 of 12); 
+        > * {
+            display:inline-block !important;
+        }
+        .block{
+            @include span(9 of 12);
+            ~ div{
+                @include span(2 of 12); 
+                > div {
+                    float: right;
+                }
+            }
+
+        }
+    }
+    &#main{
+        .mod_article > .adsense{
+            @include clearfix;
         }
     }
 }
