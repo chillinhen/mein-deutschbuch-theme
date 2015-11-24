@@ -1,20 +1,21 @@
 $basecolor: 					#2A5C7E;
+
 $darkercolor:					darken($basecolor, 6.5%);
-$highlightcolor:				#71C6FF;
+$highlightcolor:				lighten($basecolor, 20%);
 $footerColor: 					lighten($basecolor, 6.5%);
 $footerTextcolor: 			$darkercolor;
 $baseBorderColor:				#ccc;
-$wrapperBgColor:				#eee;
+$wrapperBgColor:				#fbfbfb;
 $footerLinkcolor:				#ffffff;
 $footerBordercolor:			$highlightcolor;
 $stickyNote:                            #FFF6B0;
 
 $bgColor:					#f4f4f4;
 
-$textColor:                             #333;
-$textRedColor:                          #E12A44;
-$textBlueColor:                          #1f2a44;
-$tableHeadBg:					#ccc;
-$tableEvenBg:					#eee;
-$tableOddBg:					#FBFBFB;
-$topbarBg:						#3F78AD;
+$textColor:                     #333;
+$textRedColor:                  #E12A44;
+$textBlueColor:                 #1f2a44;
+$tableHeadBg:			#eee;
+$tableEvenBg:			lighten($textColor, 75%);
+$tableOddBg:			#FBFBFB;
+$topbarBg:			#3F78AD;

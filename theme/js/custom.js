@@ -9,6 +9,20 @@ jQuery(function ($) {
       }
     
     
+    /*** Bootstrap Tweaks ***/
+    /** Navigation*/
+    $('aside .mod_navigation nav > ul').addClass('nav-stacked');
+    $('.mod_breadcrumb').children('ul').addClass('breadcrumb');
+    //$("a[href$='http://vg01.met.vgwort.de/']").css("background-color", "yellow");
+    $("a[href$='pdf']")
+            .addClass('btn-danger')
+            .addClass('btn-download');
+    
+    
+    
+    
+    //$('#main-nav a, #main-nav span').addClass('btn').addClass('btn-secondary');
+    
     //add target _blanl to external links
     $('a').filter(function () {
         return this.hostname && this.hostname !== location.hostname;
@@ -19,8 +33,13 @@ jQuery(function ($) {
     $('.ce_headline.toggle').each(function () {
         $(this).next('.flex-container').addClass('hidden');
         $(this).click(function () {
+            $(this).toggleClass('show');
             $(this).next().toggleClass('hidden');
         });
+    });
+    //toggle search box
+    $('.searchboxen button').click(function(){
+        $(this).next('.collapse').toggle();
     });
 });
 /** Table of contents***/

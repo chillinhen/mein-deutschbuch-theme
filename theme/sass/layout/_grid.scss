@@ -14,6 +14,7 @@ gutters: 1/4, // The size of a gutter in relation to a single column
             ~ .mod_article {@include span(last 9 of 12);}
         }
     }
+    
     > footer, > header{
         @include container;
     }
@@ -26,17 +27,6 @@ gutters: 1/4, // The size of a gutter in relation to a single column
         }
         #main-nav {
             @include span(last 9 of 12);
-            .level_1{
-                @include display-flex;
-                @include flex-direction(row);
-                @include justify-content(space-between);
-                @include align-items(baseline);
-
-                li {
-                    @include flex(1 0);
-                    
-                }
-            }
         }
     }
 }
@@ -47,11 +37,11 @@ gutters: 1/4, // The size of a gutter in relation to a single column
        @include span(3 of 12); 
     }
     .social{
-        @include span(6 of 12);
+        @include span(5 of 12);
         > * {float:left;}
     }
     .search-boxen{
-       @include span(last 3 of 12); 
+       @include span(last 4 of 12); 
     }
 }   
     

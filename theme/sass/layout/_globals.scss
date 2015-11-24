@@ -4,6 +4,9 @@
 .blue{
     color:$textBlueColor;
 }
+.red, .blue{
+    font-weight: bold;
+}
 .invisible{
     display:none !important;
 }
@@ -22,10 +25,16 @@
 
 table{
     width:100%;
+    margin:1em 0;
+    @include shadow;
+    @include border-style(1px, solid, $baseBorderColor);
     thead{
         tr {
-            border-bottom:1px solid #ccc;
+            border-bottom:1px solid $baseBorderColor;
             background:$tableHeadBg;
+            th{
+                text-align: center;
+            }
         }
     }
     tbody{
@@ -41,9 +50,7 @@ table{
     }
     td, th{
         padding:.5em 1em;
-        border-width:0 0 0 1px;
-        border-style:solid;
-        border-color:white;
+        @include border-style(1px, dashed, $baseBorderColor);
         &:first-child{
             border:0;
         }

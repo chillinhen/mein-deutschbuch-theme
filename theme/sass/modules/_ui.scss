@@ -3,6 +3,7 @@
     @include shadow;
     padding:$vgrid;
     background:$highlightcolor;
+    min-width:300px;
     * {
         color:lighten($highlightcolor,80%);
         text-decoration: none;
@@ -10,25 +11,35 @@
     img {
         display: none;
     }
-    &:after {
+    &:before {
         @include icon-style ("\f1c1", 1em, 1, 0, large);
+        float:left;
+        display: inline-block;
+        margin-bottom: 1em;
     }
     &:hover{
         text-decoration: none;
         background-image: none;
     }
 }
+
 .toggle{
+    border-bottom:1px solid currentColor;
+    clear:both;
     &:hover{
         cursor: pointer;
     }
     &:before{
-        @include icon-style ("\f055", 0, 1, 1em, large);
+        @include icon-style ("\f105", 1em, 1, 0, larger);
+    }
+    &.show:before{
+        content:"\f107";
     }
     ~ .flex-container.hidden{
         display:none;
     }
 }
+
 /*** Scroll to top ***/
 .scroll-to-top {
     background: none repeat scroll 0 0 $basecolor;

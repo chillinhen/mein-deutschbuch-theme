@@ -1,16 +1,22 @@
-
+body {
+    background:$bgColor url('../img/mdbg.png');
+}
 #wrapper {
-    background-color: $wrapperBgColor;
+    background-color: transparent;
+}
     .inside{
-        #main > &, #header > &{
-            /*            padding:$vgrid; */
+        #header > &, #footer > &{
+            padding: 2em;
+        }
+        #main > &{
+            padding:0 2em;
         }
     }
-}
 
 #header{
     background:white;
     border-bottom: 1px solid $baseBorderColor;
+    @include shadow;
     #logo {
         img {
             max-width: 100%;
@@ -18,7 +24,70 @@
         }
     }
 }
+.addons{
+    position:relative;
+    .agoff{
+        text-align:center;
+        img {
+            margin-top:.5em;
+        }
+    }
+    .social{
+        margin-top:2em;
+        &:before, &:after{
+            @include clearfix;
+        }
+        > div {margin-right: 1em;}
+    }
+    .search-boxen{       
+        > .box {
+            background: $basecolor;
+            position:absolute;
+            top:2em;
+            right:0;
+            padding: .5em;
+            > button {
+                color:$bgColor;
+                float:right;
+                background-color:transparent;
+                border:0;
+                font-size: 1em;
+            }
+        }
 
+        #searchForms{
+            float:right;
+            display:none;
+            .widget {
+                @include display-flex;
+                @include justify-content(space-between);
+                @include align-items(center);
+                margin-bottom:.2em;
+
+                input[type="submit"],input[type="text"]{
+                    padding:.2em .5em;
+                    font-size: .8em;
+                }
+                input[type="submit"]{
+                    @include flex(1);
+                    margin-left: 1em;
+                    font-size: large;
+
+                }
+                input[type="text"]{
+                    @include flex(3);
+                    min-width: 200px;
+
+                }
+            }
+        }
+    }
+}
+.mod_breadcrumb{
+    padding:2em;
+    margin-bottom:1em;
+    border-bottom:1px solid $baseBorderColor;
+}
 #container {
     .block{
         .flex-container &{
@@ -26,6 +95,11 @@
             border: 1px solid;
             border-color: $baseBorderColor;
             background-color: #eee; 
+        }
+        &.ce_text{
+            background: #fbfbfb;
+            padding:2em;
+            @include border-style(1px, solid, $baseBorderColor);
         }
     }
 }

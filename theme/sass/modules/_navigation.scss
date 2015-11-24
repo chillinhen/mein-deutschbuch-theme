@@ -1,12 +1,16 @@
 #main-nav{
+    padding-top:2em;
     ul {
         li {
-            text-align: center;
+            display: inline-block;
+            float:left;
+            margin: 0 1em;
+            &.first{margin-left: 0;}
+            &.last{margin-right: 0;}
             &.startseite{
                 display:none;
             }
             a, span{
-                font-size:1vw;
                 width:100%;
                 display:inline-block;
                 line-height: 1.2;
@@ -18,25 +22,37 @@
             }
         }
     }
+
     &.navbar-fixed-top{
         position: fixed;
         top:0;
         left:0;
         width:100% !important;
-        background:$basecolor;
+        background:lighten($basecolor, 20%);
+        padding:0;
+        z-index:999999999;
         li.startseite{    
             display:block;
         }
         ul{
+        @include display-flex;
+        @include justify-content(center);
+        @include align-items(flex-end);
             li{
+                float:none;
+                @include flex(1 0);
+                margin:0;
+                text-align:center;
+                height:100%;
                 a, span{
                     color:white;
+                    padding:1em;
                 }
                 &.active, &.trail{
-                    height:100%;
+                    
                     a, span {
                         color:$basecolor;
-                        background: $bgColor;
+                        background:$bgColor url('../img/mdbg.png');
                         border-bottom:0;
                     }
                 }
@@ -122,22 +138,33 @@
     }
 }
 .mod_breadcrumb {
+    
     body.startseite & {
         display: none;
     }
     > ul{
-        @include push(3 of 12);
-        @include clearfix;
+        margin:2em 0;
         > li {
             float:left;
             &:after {
                 content: ' / ';
+                margin:0 .2em;
             }
         }
         > li:last-child{
             &:after {
                 content: ' ';
             }
+        }
+        > li {
+            font-style:italic;
+            a {
+                color:$basecolor;
+                text-decoration: underline;
+            }
+        }
+        > li.active{
+            font-weight: bold;
         }
     }
 }
