@@ -1,8 +1,10 @@
   .btn-download{
-    @include span(last 2 of 12);
+    position: absolute;
+    top:0;
+    right:0;
     @include shadow;
     padding:$vgrid;
-    background:$highlightcolor;
+    background:darken($highlightcolor,5%);
     min-width:300px;
     * {
         color:lighten($highlightcolor,80%);
@@ -15,11 +17,13 @@
         @include icon-style ("\f1c1", 1em, 1, 0, large);
         float:left;
         display: inline-block;
-        margin-bottom: 1em;
     }
     &:hover{
         text-decoration: none;
         background-image: none;
+    }
+    ~.headline-container{
+        max-width:50%;
     }
 }
 

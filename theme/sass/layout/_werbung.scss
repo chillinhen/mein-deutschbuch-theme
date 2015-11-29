@@ -1,7 +1,7 @@
 .if-has-ads{
     &.custom{
         float:right;
-    margin-right: 160px;
+        margin-right: 160px;
     }
     &#wrapper{
         padding-right:160px;
@@ -11,29 +11,35 @@
         margin: 2em 3em;
         border-bottom: 1px solid #ccc;
     }
-    .netpoint-billboard{
-        padding-bottom: 2em;
-        margin-bottom:2em;
-    }
-
-    .flex-container {
-        > * {
-            display:inline-block !important;
-        }
-        .block{
-            @include span(9 of 12);
-            ~ div{
-                @include span(2 of 12); 
-                > div {
-                    float: right;
+    body:not(.startseite) &{
+        .flex-container { 
+            @include display-flex;
+            margin-bottom:2em;
+            > .block{
+                @include flex(5 0);
+                ~*{
+                    @include flex(1 0); 
+                    margin:0 2em;
                 }
             }
-
         }
     }
-    &#main{
-        .mod_article > .adsense{
-            @include clearfix;
+    .flex-container.affix-top{
+        @include display-flex;
+        > *{
+            @include flex(1 0);
         }
+        ul.level_1{
+            @include columns(20em 2);
+        }
+    }
+    
+    &#main-nav ul li a{font-size:.9em;}
+    .netpoint-video{
+       margin-right: 2em;
+       margin-left: 2em;
+       max-width:300px;
+       height:auto;
     }
 }
+

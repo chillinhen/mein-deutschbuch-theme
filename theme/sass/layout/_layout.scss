@@ -1,8 +1,8 @@
-body {
-    background:$bgColor url('../img/mdbg.png');
-}
+body {}
+    
 #wrapper {
     background-color: transparent;
+    background:$bgColor url('../img/mdbg.png');
 }
     .inside{
         #header > &, #footer > &{
@@ -84,7 +84,7 @@ body {
     }
 }
 .mod_breadcrumb{
-    padding:2em;
+    padding:2em 0;
     margin-bottom:1em;
     border-bottom:1px solid $baseBorderColor;
 }
@@ -98,9 +98,47 @@ body {
         }
         &.ce_text{
             background: #fbfbfb;
-            padding:2em;
+            padding:1.5em;
             @include border-style(1px, solid, $baseBorderColor);
+            > div {
+                margin-bottom: 1em;
+            }
+            
+            li{
+                list-style-position: inside;
+                margin-bottom:.5em;
+                @include clearfix;
+                h1, h2, h3, h4, h5, h5 {
+                    float: left;
+                    @include clearfix;
+                    display: inline-block;
+                    margin:-.2em 0 0 0;
+                     a{
+                        text-decoration: none;
+                    }
+                    ~ *{clear:both;}
+                }
+                &:before {
+                    @include icon-style ('\f0da', 1em, 1, 0, 1em);
+                    margin-bottom: 1em;
+                    float:left;
+                }
+            }
         }
+        
+    }
+/*    .ce_headline{
+            margin-top:$fixedHeaderHeight;
+            padding-top: 3em;
+        }*/
+    .headline-container{
+       position: relative;
+       .ce_headline:before{
+          content:' ';
+          display:block;
+          height: $jumpAnchor;
+          margin: -$jumpAnchor 0 0;
+       }
     }
 }
 #footer {

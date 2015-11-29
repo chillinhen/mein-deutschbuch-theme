@@ -7,6 +7,15 @@
 .red, .blue{
     font-weight: bold;
 }
+.highlight{
+    .mod_search &{
+        background: $stickyNote;
+        font-style: italic;  
+    }
+}
+.url{
+    .mod_search &{font-style:italic;color:$basecolor;}
+}
 .invisible{
     display:none !important;
 }

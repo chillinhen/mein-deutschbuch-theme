@@ -8,7 +8,6 @@ jQuery(function ($) {
         $('.custom, #wrapper, .netpoint-billboard, #main, #footer').addClass('if-has-ads');
       }
     
-    
     /*** Bootstrap Tweaks ***/
     /** Navigation*/
     $('aside .mod_navigation nav > ul').addClass('nav-stacked');
@@ -29,7 +28,8 @@ jQuery(function ($) {
     }).attr("target", "_blank");
     
     // Toggle contents
-    $();
+    $('.mod_article .ce_headline').wrap('<div class="headline-container"></div>');
+   
     $('.ce_headline.toggle').each(function () {
         $(this).next('.flex-container').addClass('hidden');
         $(this).click(function () {
@@ -77,11 +77,15 @@ jQuery(window).scroll(function () {
         jQuery('.scroll-to-top').fadeIn();
         jQuery('#main-nav').addClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').addClass('fixed');
+        jQuery('.ce_table-of-contents').addClass('fixed');
+        jQuery('#container .mod_article, #container .mod_breadcrumb').addClass('indent');
         
     } else {
         jQuery('.scroll-to-top').fadeOut();   
         jQuery('#main-nav').removeClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').removeClass('fixed');
+        jQuery('.ce_table-of-contents').removeClass('fixed');
+        jQuery('#container .mod_article, #container .mod_breadcrumb').removeClass('indent');
     }
 });
 
