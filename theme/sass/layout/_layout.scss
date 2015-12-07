@@ -7,9 +7,15 @@ body {}
     .inside{
         #header > &, #footer > &{
             padding: 2em;
+            @media screen and (max-width:$screen-sm){
+                padding: 0; 
+            }
         }
         #main > &{
             padding:0 2em;
+            @media screen and (max-width:$screen-sm){
+                padding:0; 
+            }
         }
     }
 
@@ -37,7 +43,7 @@ body {}
         &:before, &:after{
             @include clearfix;
         }
-        > div {margin-right: 1em;}
+        > div {margin-left: 1em;}
     }
     .search-boxen{       
         > .box {
@@ -127,12 +133,11 @@ body {}
         }
         
     }
-/*    .ce_headline{
-            margin-top:$fixedHeaderHeight;
-            padding-top: 3em;
-        }*/
     .headline-container{
        position: relative;
+       @media screen and (max-width:$screen-smallPad){
+           padding:.5em 1em;
+       }
        .ce_headline:before{
           content:' ';
           display:block;

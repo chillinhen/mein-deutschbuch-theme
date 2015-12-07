@@ -78,14 +78,14 @@ jQuery(window).scroll(function () {
         jQuery('#main-nav').addClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').addClass('fixed');
         jQuery('.ce_table-of-contents').addClass('fixed');
-        jQuery('#container .mod_article, #container .mod_breadcrumb').addClass('indent');
+        jQuery('body:not(.startseite) #container .mod_article, body:not(.mobile) #container .mod_article, #container .mod_breadcrumb').addClass('indent');
         
     } else {
         jQuery('.scroll-to-top').fadeOut();   
         jQuery('#main-nav').removeClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').removeClass('fixed');
         jQuery('.ce_table-of-contents').removeClass('fixed');
-        jQuery('#container .mod_article, #container .mod_breadcrumb').removeClass('indent');
+        jQuery('body:not(.startseite) #container .mod_article, body:not(.mobile) #container .mod_article, #container .mod_breadcrumb').removeClass('indent');
     }
 });
 

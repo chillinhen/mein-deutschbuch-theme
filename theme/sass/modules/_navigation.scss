@@ -1,10 +1,82 @@
 #main-nav{
     padding-top:2em;
+    position: relative;
+    @media screen and (max-width:$screen-smallPad){
+        height:50px;
+    }
+    @media screen and (max-width:$screen-smallPad){ 
+        input[type=checkbox] {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        label { 
+            width:30px;
+            height:30px;
+            cursor: pointer;
+            display:block;
+            position:absolute;
+            top:2em;
+            left:1em;
+            > span{
+                background: $basecolor;
+                height:3px;
+                margin-bottom: 6px;
+                display: block;
+            }
+            ~.ce_image{
+                position:absolute;
+                top:1em;
+                right:1em;
+                left:55px;
+            }
+        }
+
+
+        /* Default State */
+        nav {
+            height:0;
+            display:none;
+            clear:both;
+        }
+
+        /* Toggled State */
+        input[type=checkbox]:checked ~ nav {
+            @include transition(height);
+            height:auto;
+            min-height: 420px;
+            display:block;
+            background: white;
+            width:100%;
+            z-index: 999;
+            position:absolute;
+            top:60px;
+            left:0;
+        }
+    }
+    @media screen and (min-width:$screen-md){
+        label, input[type=checkbox], label ~.ce_image {display:none;} 
+    }
     ul {
         li {
-            display: inline-block;
-            float:left;
-            margin: 0 .5em;
+            @media screen and (max-width:$screen-smallPad){
+                display: block;
+                max-width:320px;
+                padding:1em 1em 1em 60px;
+                border-bottom:1px solid currentColor;
+            }
+            @media screen and (min-width:$screen-smallPad){
+                display: inline-block;
+                float:left;
+            }
+            @media screen and (min-width:$screen-smallPad){
+                margin: 0 .5em; 
+            }
+            @media screen and (min-width:$screen-smallPad +1) and (max-width:$screen-md){
+                margin: -.5em 2em 0 0;
+                padding:0 0 2em 0;
+                font-size:large;
+            }
             &.first{margin-left: 0;}
             &.last{margin-right: 0;}
             &.startseite{
@@ -17,44 +89,53 @@
                 color:$basecolor;
                 text-transform: uppercase;
             }
-            &.active a, &.trail a,
-            &.active span, &.trail span{
-                border-bottom: 2px solid $highlightcolor;
+            @media screen and (min-width:$screen-sm){
+                &.active a, &.trail a,
+                &.active span, &.trail span{
+                    border-bottom: 2px solid $highlightcolor;
+                }
             }
         }
     }
-
+    /*    @media screen and (min-width:$screen-md){*/
     &.navbar-fixed-top{
         position: fixed;
         top:0;
         left:0;
         width:100% !important;
-        background:lighten($basecolor, 20%);
-        padding:0;
+        height:50px;
         z-index:999999999;
+        @include shadow;
         li.startseite{    
             display:block;
         }
-        ul{
-            @include display-flex;
-            @include justify-content(center);
-            @include align-items(flex-end);
-            li{
-                float:none;
-                @include flex(1 0);
-                margin:0;
-                text-align:center;
-                height:100%;
-                a, span{
-                    color:white;
-                    padding:1em;
-                }
-                &.active, &.trail{
+        @media screen and (max-width:$screen-smallPad){
+            background:white;
+        }
+        @media screen and (min-width:$screen-smallPad){
+            background:lighten($basecolor, 20%);
+            padding:0;
+            ul{
+                @include display-flex;
+                @include justify-content(center);
+                @include align-items(flex-end);
+                li{
+                    float:none;
+                    @include flex(1 0);
+                    margin:0;
+                    text-align:center;
+                    height:100%;
+                    a, span{
+                        color:white;
+                        padding:1em;
+                    }
+                    &.active, &.trail{
 
-                    a, span {
-                        color:$basecolor;
-                        background:$bgColor url('../img/mdbg.png');
-                        border-bottom:0;
+                        a, span {
+                            color:$basecolor;
+                            background:$bgColor url('../img/mdbg.png');
+                            border-bottom:0;
+                        }
                     }
                 }
             }

@@ -1,2 +1,10 @@
-<!--Async Tag // Tag for network 59: Netpoint Media // Website: MEIN-DEUTSCHBUCH.DE // Placement: mei_rotation_160x600_2 (5834344) -->
-<div id='5834344' class="mei_rotation_160x600_2"></div>
+<div id="main-nav">
+<label for="toggle">
+	<span class="toggle-bar"> </span>
+        <span class="toggle-bar"> </span>
+        <span class="toggle-bar"> </span>
+</label>
+{{insert_article::main-logo}}
+<input type="checkbox" id="toggle">
+    {{insert_module::33}}
+</div>

@@ -17,6 +17,14 @@ $path-css-to-img-folder: '../img';
     -moz-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
     box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
 }
+
+@mixin transition($item){
+    -webkit-transition: $item 200ms ease-in;
+-moz-transition: $item 200ms ease-in;
+-ms-transition: $item 200ms ease-in;
+-o-transition: $item 200ms ease-in;
+transition: $item 200ms ease-in;
+}
 /*** border-style***/
 @mixin border-style($width, $style, $color){
     border-width:$width;

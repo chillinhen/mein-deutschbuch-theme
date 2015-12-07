@@ -47,7 +47,9 @@
 /*** Scroll to top ***/
 .scroll-to-top {
     background: none repeat scroll 0 0 $basecolor;
-    @include border-radius(4px);
+    @include border-radius(0);
+    position: fixed;
+    left: 20px;
     bottom: 4%;
     color: white;
     cursor: pointer;
@@ -55,8 +57,6 @@
     font-size:large;
     line-height: 1;
     padding: 5px 10px;
-    position: fixed;
-    right: 20px;
     transition: background-color 0.1s linear 0s;
     z-index: 9999;
     &:hover {
