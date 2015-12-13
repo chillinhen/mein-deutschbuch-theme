@@ -94,6 +94,17 @@ body {}
     margin-bottom:1em;
     border-bottom:1px solid $baseBorderColor;
 }
+body.startseite {
+    #container{
+        .block{
+            li:before {
+                @include icon-style ('\f0da', 1em, 1, 0, 1em);
+                margin-bottom: 1em;
+                float:left;
+            }
+        }
+    }
+}
 #container {
     .block{
         .flex-container &{
@@ -102,7 +113,7 @@ body {}
             border-color: $baseBorderColor;
             background-color: #eee; 
         }
-        &.ce_text{
+        &.ce_text:not(#uebersicht){
             background: #fbfbfb;
             padding:1.5em;
             @include border-style(1px, solid, $baseBorderColor);
@@ -124,13 +135,11 @@ body {}
                     }
                     ~ *{clear:both;}
                 }
-                &:before {
-                    @include icon-style ('\f0da', 1em, 1, 0, 1em);
-                    margin-bottom: 1em;
-                    float:left;
-                }
             }
         }
+        &#uebersicht + .flex-container .mod_navigation{
+            margin-top:1em;
+        } 
         
     }
     .headline-container{

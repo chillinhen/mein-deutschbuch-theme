@@ -1,0 +1,10 @@
+.ce_fblikeit_xfbml{
+    float: left;
+}
+.googleplus1{
+    &:after{
+        content:' ';
+        display: block;
+        clear:both;
+    }
+}

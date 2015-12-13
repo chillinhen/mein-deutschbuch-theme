@@ -1,29 +1,25 @@
   .btn-download{
-    position: absolute;
-    top:0;
-    right:0;
-    @include shadow;
-    padding:$vgrid;
-    background:darken($highlightcolor,5%);
-    min-width:300px;
+    display:block;
+    text-align:left;
+    > span {
+        display:inline-block;
+            @include shadow;
+            padding:$vgrid/2 $vgrid;
+            background:darken($highlightcolor,5%);
+            margin:$vgrid auto;
+    }
     * {
         color:lighten($highlightcolor,80%);
         text-decoration: none;
-    }
-    img {
-        display: none;
-    }
-    &:before {
-        @include icon-style ("\f1c1", 1em, 1, 0, large);
-        float:left;
-        display: inline-block;
     }
     &:hover{
         text-decoration: none;
         background-image: none;
     }
-    ~.headline-container{
-        max-width:50%;
+    img {
+        height:1.2em;
+        width:auto;
+        margin:0 0 0 .2em;
     }
 }
 

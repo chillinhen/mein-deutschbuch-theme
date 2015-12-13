@@ -12,12 +12,23 @@ jQuery(function ($) {
     /** Navigation*/
     $('aside .mod_navigation nav > ul').addClass('nav-stacked');
     $('.mod_breadcrumb').children('ul').addClass('breadcrumb');
-    //$("a[href$='http://vg01.met.vgwort.de/']").css("background-color", "yellow");
+
+    //modify download buttons
     $("a[href$='pdf']")
-            .addClass('btn-danger')
-            .addClass('btn-download');
-    
-    
+            .addClass('btn-download')
+            .wrapInner('<span></span>');
+    $("a[href$='pdf'] span img ").attr('src','http://localhost:8888/mein-deutschbuch/files/images/download.svg');
+    //$("a[href$='pdf'] span img ").attr('src','http://wip.mein-deutschbuch.de/files/images/download.svg');
+    if (!Modernizr.svg) {
+       $("a[href$='pdf'] span img").attr("src", 'http://localhost:8888/mein-deutschbuch/files/images/download.png');
+        //$("a[href$='pdf'] span img").attr("src", 'http://wip.mein-deutschbuch.de/files/images/download.png');
+    }
+    /** Links Overview*/
+    $('.mod_navigation.block li.submenu').each(function(){
+        if($(this).children('ul')){
+            $(this).addClass('parent');
+        }
+    });
     
     
     //$('#main-nav a, #main-nav span').addClass('btn').addClass('btn-secondary');
@@ -77,15 +88,12 @@ jQuery(window).scroll(function () {
         jQuery('.scroll-to-top').fadeIn();
         jQuery('#main-nav').addClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').addClass('fixed');
-        jQuery('.ce_table-of-contents').addClass('fixed');
-        jQuery('body:not(.startseite) #container .mod_article, body:not(.mobile) #container .mod_article, #container .mod_breadcrumb').addClass('indent');
+//        jQuery('.ce_table-of-contents').addClass('fixed');
         
     } else {
         jQuery('.scroll-to-top').fadeOut();   
         jQuery('#main-nav').removeClass('navbar-fixed-top');
         jQuery('#side-nav.mod_navigation').removeClass('fixed');
-        jQuery('.ce_table-of-contents').removeClass('fixed');
-        jQuery('body:not(.startseite) #container .mod_article, body:not(.mobile) #container .mod_article, #container .mod_breadcrumb').removeClass('indent');
     }
 });
 

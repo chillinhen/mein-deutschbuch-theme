@@ -2,6 +2,15 @@ $vgrid: 1em;
 $jumpAnchor: 65px;
 $path-css-to-img-folder: '../img';
 
+
+/*** Link Overview ***/
+@mixin link-overview{
+    > a, > span {
+        color:$basecolor;
+        font-weight: bold;
+        font-size:14px;
+    }
+}
 /* Fontawesome Icons */
 @mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
     font-family: 'FontAwesome';

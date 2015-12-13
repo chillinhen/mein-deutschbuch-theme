@@ -1,3 +1,13 @@
+.adsense, .landscape{
+    text-align:center;
+/*    border:1px solid red;
+    h1, h2, h3, h4, h5, h6 {
+        text-indent: -9999999999px;
+        overflow: hidden;
+        visibility: hidden;
+        height:0;        
+    }*/
+}
 .if-has-ads{
     &.custom{
         float:right;
@@ -9,7 +19,7 @@
     }
     &.netpoint-billboard {
         margin: 2em 3em;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;     
     }
     body:not(.startseite) &{
         .flex-container { 
